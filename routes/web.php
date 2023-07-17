@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Artisan;
 
 
 /* CUSTOMER CLIENT    */
-
+// kl mau otak atik admin line 23,25 dan 27 komen dulu
 Route::get('/', function (Request $request) {
-    if ($request->getHost() == 'koneksi.himsiunair.com') {
+    // if ($request->getHost() == 'koneksi.himsiunair.com') {
         return redirect()->route('admin.home');
-    }
+    // }
     // return view('landing-page-client');
-    return view('koneksi.landing');
+    // return view('koneksi.landing');
 })->name('home');
 
 // Route::get('about-us', function () {

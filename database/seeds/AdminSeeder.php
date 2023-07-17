@@ -8,7 +8,8 @@ class AdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *ini sebagai seeder admin seeder untuk akun admin
+     *inibolehdicobasih -> username&password
      * @return void
      */
     public function run()

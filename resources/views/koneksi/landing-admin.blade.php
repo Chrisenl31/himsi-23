@@ -8,7 +8,7 @@
 @section('container', 'adm-login')
 
 @section('content')
-    <img src="{{ url('assets/image/logo-koneksi.png') }}" alt="" class="adm-login__ornament">
+    <img src="{{ url('assets/image/mercusuar/logo-mercusuar.png') }}" alt="" class="adm-login__ornament">
     <div class="adm-login__card">
         <div class="adm-login__title-section">
             <h1 class="midnight-blue">Login</h1>
