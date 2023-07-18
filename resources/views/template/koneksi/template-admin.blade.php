@@ -26,6 +26,9 @@
         href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Poppins:wght@100;300;400;500&display=swap"
         rel="stylesheet">
 
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R0KVNDRDE"></script>
     <script>

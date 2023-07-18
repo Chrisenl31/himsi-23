@@ -39,6 +39,15 @@
                 <input type="password" name="password" id="password" class="form__control form__harus-diisi"
                     value="{{ old('password') ? old('password') : '' }}" placeholder="Masukkan password"
                     data-error="#password-error">
+                    <div class="showp">
+                        <input type="checkbox" class="inshow">
+                        <span>Show Password</span>
+                    </div>
+                {{-- <span class="eye" onclick="showp()">
+                    <h1>Show Password</h1>
+                    <i id="hide1" class="fa fa-light fa-eye"></i>
+                    <i id="hide2" class="fa fa-sharp fa-light fa-eye-slash"></i>
+                </span> --}}
             </div>
             <button type="submit" class="btn-primary">Masuk</button>
         </form>
@@ -75,6 +84,30 @@
                 document.querySelector('form').submit();
             }
         });
+
+        //show password
+        $('.inshow').click(function() {
+            if ($(this).is(':checked')) {
+                $('#password').attr('type', 'text');
+            } else {
+                $('#password').attr('type', 'password');
+            }
+        });
+        // function showp() {
+        //     var x = document.getElementById("password");
+        //     var y = document.getElementById("hide1");
+        //     var z = document.getElementById("hide2");
+
+        //     if (x.type === 'password') {
+        //         x.type = "text";
+        //         y.style.display = "block";
+        //         z.style.display = "none";
+        //     } else {
+        //         x.type = "password";
+        //         y.style.display = "none";
+        //         z.style.display = "block";
+        //     }
+        // }
 
         // document.querySelector('button').addEventListener('click', (e) => {
         //     e.preventDefault();

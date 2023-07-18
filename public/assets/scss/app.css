@@ -2372,6 +2372,32 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   align-self: flex-end;
 }
 
+.showp {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.showp .inshow {
+  accent-color: #241E7B;
+  height: 22px;
+  width: 22px;
+}
+
+.showp .inshow[type=checkbox]:before {
+  width: 20px;
+  height: 20px;
+}
+
+.showp .inshow[type=checkbox]:after {
+  width: 16px;
+  height: 16px;
+}
+
+.showp span {
+  margin-left: 1rem;
+}
+
 .sidebar {
   height: 100vh;
   position: fixed;
