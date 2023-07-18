@@ -32,6 +32,8 @@ Route::get('about-us', function () {
 })->name('about-us');
 
 
+
+
 /* untuk client */
 
 /* untuk client  */
@@ -155,13 +157,19 @@ Route::prefix('chsi')->group(function () {
     // });
 });
 
-Route::prefix('alumni')->group(function () {
-    Route::get('/', 'AlumniController@index')->name('alumni.index');
+// {{ Alumni Baru Sementara }}
+Route::get('/alumni', function () {
+    return view('alumni.client.index');
+})->name('alumni');
 
-    Route::prefix('admin')->group(function () {
-        Route::get('/', 'AlumniController@adminindex')->name('admin.alumni.index');
-    });
-});
+// {{ Alumni Lama }}
+// Route::prefix('alumni')->group(function () {
+//     Route::get('/', 'AlumniController@index')->name('alumni.index');
+
+//     Route::prefix('admin')->group(function () {
+//         Route::get('/', 'AlumniController@adminindex')->name('admin.alumni.index');
+//     });
+// });
 
 // OPREC 22 LANDING
 // Route::get('/registration', function () {

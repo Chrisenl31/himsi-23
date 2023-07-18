@@ -1,0 +1,145 @@
+.body {
+    background-color: #f7f9fc;
+}
+
+.selected {
+    background-color: #c2e7ff;
+}
+
+.alumni {
+    min-height: calc(100vh - 6rem);
+    padding-top: 2rem;
+    display: flex;
+    // align-items: center;
+    // justify-content: flex-start;
+    gap: 2rem;
+
+    .sidebar {
+        display: flex;
+        align-self: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+        width: 20vw;
+
+        &__title {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        &__year {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        &__btn {
+            display: flex;
+            justify-content: flex-start;
+            border-radius: 2rem;
+
+            &:hover {
+                background-color: #c2e7ff;
+            }
+        }
+    }
+
+    .main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        .list {
+            display: inherit;
+            flex-direction: inherit;
+            width: inherit;
+            gap: 0.6rem;
+            background-color: #ffffff;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+        }
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        .search {
+            width: inherit;
+            display: inherit;
+            flex-direction: inherit;
+            gap: 1.5rem;
+
+            &__bar {
+                width: inherit;
+                display: flex;
+                align-items: center;
+
+                img {
+                    position: absolute;
+                    width: 2rem;
+                    margin-left: 1rem;
+                }
+
+                &__input {
+                    padding: 0.5rem 1.2rem 0.5rem 3rem;
+                    width: inherit;
+                    border-radius: 2rem;
+                    background-color: #edf2fc;
+                }
+            }
+        }
+
+        .table {
+            width: inherit;
+            display: inherit;
+            flex-direction: inherit;
+            gap: 1rem;
+
+            &__content {
+                width: inherit;
+                border: none;
+
+                &__profile {
+                    width: 3rem;
+                    object-fit: cover;
+                }
+
+                th {
+                    border-bottom: 0.3px solid $independence-60;
+                }
+
+                td {
+                    border-bottom: none;
+                }
+
+                td:first-child {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                td:not(:first-child),
+                th:not(:first-child) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+
+        > * {
+            display: inherit;
+            justify-content: center;
+            width: 0.8rem;
+            border-radius: 100%;
+        }
+
+        > :hover {
+            background-color: #c2e7ff;
+        }
+    }
+}
