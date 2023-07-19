@@ -19,8 +19,8 @@
             </div>
         </nav>
         <main class="main">
-            {{-- Search bar --}}
             <div class="list">
+                {{-- Search bar --}}
                 <form class="search" autocomplete="off">
                     <h4 class="main__title">Data Alumni</h4>
                     <div class="search__bar">
@@ -30,28 +30,30 @@
                 </form>
                 {{-- Main Content -> List of Alumni --}}
                 <div class="table">
-            </div>
-
-                <table class="table__content">
-                    <tr>
-                        <th>Nama</th>
-                        <th>Profil</th>
-                        <th>Email</th>
-                        <th>Bidang Pekerjaan</th>
-                    </tr>
-                    <tr>
-                        <td><img src="{{ url('assets/image/academic/academic1.png') }}" alt="img" class="table__content__profile"><span>Darfito Danur</span></td>
-                        <td><a href="">linkedin</a></td>
-                        <td>darfito@gmail.com</td>
-                        <td>Software Developer</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{ url('assets/image/academic/academic2.png') }}" alt="img" class="table__content__profile"><span>Cakra Kusuma Erlangga Ramdani</span></td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                    </tr>
-                </table>
+                    <table class="table__content">
+                        <tr>
+                            <th>Nama</th>
+                            <th>Profil</th>
+                            <th>Email</th>
+                            <th>Bidang Pekerjaan</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Darfito Danur</td>
+                            <td><a href="">linkedin</a></td>
+                            <td>darfito@gmail.com</td>
+                            <td>Software Developer</td>
+                            <td><a href=""><img src="{{ url('assets/img/mercusuar/icon/info.svg') }}"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Cakra Kusuma Erlangga Ramdani</td>
+                            <td><a href="">linkedin</a></td>
+                            <td>cak@gmail.com</td>
+                            <td>Web Developer</td>
+                            <td><a href=""><img src="{{ url('assets/img/mercusuar/icon/info.svg') }}"></a></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             {{-- Pagination --}}
             <div class="pagination">

@@ -2476,12 +2476,6 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   border: none;
 }
 
-.alumni .main .table__content__profile {
-  width: 3rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .alumni .main .table__content th {
   border-bottom: 0.3px solid rgba(96, 99, 122, 0.6);
 }
@@ -2490,15 +2484,18 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   border-bottom: none;
 }
 
-.alumni .main .table__content td:first-child {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .alumni .main .table__content td:not(:first-child),
 .alumni .main .table__content th:not(:first-child) {
   text-align: center;
+}
+
+.alumni .main .table__content img {
+  width: 2rem;
+  border-radius: 2rem;
+}
+
+.alumni .main .table__content img:hover {
+  background-color: #edf2fc;
 }
 
 .alumni .pagination {

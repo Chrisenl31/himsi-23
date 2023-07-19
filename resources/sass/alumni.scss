@@ -99,11 +99,6 @@
                 width: inherit;
                 border: none;
 
-                &__profile {
-                    width: 3rem;
-                    object-fit: cover;
-                }
-
                 th {
                     border-bottom: 0.3px solid $independence-60;
                 }
@@ -112,15 +107,18 @@
                     border-bottom: none;
                 }
 
-                td:first-child {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                }
-
                 td:not(:first-child),
                 th:not(:first-child) {
                     text-align: center;
+                }
+
+                img {
+                    width: 2rem;
+                    border-radius: 2rem;
+
+                    &:hover {
+                        background-color: #edf2fc;
+                    }
                 }
             }
         }
