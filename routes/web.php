@@ -14,6 +14,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\AlumniController;
 
 
 
@@ -45,7 +46,7 @@ Route::post('/f/{token}', 'RespondenController@submit')->name('form.bitly.submit
 //     ]);
 // })->name('akademik');
 
-/* untuk admin*/
+/* untuk admin bagian login dan logout*/
 Route::prefix('admin')->group(function () {
     /* ADMIN   */
     Route::get('/', 'AuthController@dashboard')->middleware('auth')->name('admin.home');
@@ -54,7 +55,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/logout', 'AuthController@logout')->middleware('auth')->name('auth.logout');
 });
 
-/* untuk client  */
+/* untuk client bagian form */
 Route::prefix('feature')->group(function () {
     Route::get('/', function () {
         dump('Hello World');
@@ -80,7 +81,7 @@ Route::prefix('feature')->group(function () {
 });
 
 
-/* untuk admin */
+/* untuk admin bagian form*/
 Route::prefix('form')->middleware('auth')->group(function () {
     Route::get('/', 'FormController@index')->name('form.index');
     Route::get('/create', 'FormController@index')->name('form.create');
@@ -101,7 +102,7 @@ Route::prefix('form')->middleware('auth')->group(function () {
     });
 });
 
-/* untuk admin */
+/* untuk admin ini chsi bagian responden tapi chsi dah ga dipake - sejak 2023 */
 Route::prefix('responden')->middleware('auth')->group(function () {
     Route::get('/', 'RespondenController@index')->name('responden.index');
     Route::get('/cari', 'RespondenController@cari')->name('responden.cari');
@@ -135,7 +136,7 @@ Route::prefix('chsi')->group(function () {
     //     Route::get('/{kategori}', 'ChsiController@meditasikategori')->name('meditasi.kategori');
     // });
 
-    /* untuk admin */
+    /* untuk admin ini chsi tapi dah ga kepake sejak 2023*/
     Route::prefix('admin')->middleware('auth')->group(function () {
         // Route::get('/', 'ChsiController@psdmindex')->name('chsi.admin.index');
         Route::prefix('curhat')->group(function () {
@@ -153,6 +154,11 @@ Route::prefix('chsi')->group(function () {
     });
 });
 
+// ini untuk admin bagian alumni
+Route::get('/admin/alumni/add', [AlumniController::class, 'add']);
+Route::get('/admin/alumni/edit', [AlumniController::class, 'edit']);
+
+/* bagian ini route alumni punya mas yer
 Route::prefix('alumni')->group(function () {
     Route::get('/', 'AlumniController@index')->name('alumni.index');
 
@@ -160,6 +166,8 @@ Route::prefix('alumni')->group(function () {
         Route::get('/', 'AlumniController@adminindex')->name('admin.alumni.index');
     });
 });
+
+bagian ini route alumni punya mas yer */
 
 // OPREC 22 LANDING
 // Route::get('/registration', function () {

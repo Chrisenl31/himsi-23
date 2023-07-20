@@ -1,9 +1,15 @@
+// scss bagian partials
 @import 'env';
 @import 'navbar';
 @import 'footer';
 @import 'form';
 @import 'dialog';
 @import 'alert';
+@import 'sidebar';
+// scss partial berakhir disini
+
+
+// ini scss bagian himsi.com
 // @import 'oprec-landing';
 // @import 'client-form';
 @import 'landing';
@@ -17,10 +23,14 @@
 @import 'chsi-landing';
 @import 'chsi-add';
 @import 'chsi-chatroom';
+// scss bagian himsi.com berakhir disini
+
+// ini scss bagian admin
 @import 'adm-login';
-@import 'sidebar';
 @import 'adm-dashboard';
 @import 'adm-krisar';
 @import 'adm-form';
 @import 'adm-chsi';
 @import 'adm-chatroom';
+@import 'adm-alumniadd';
+// scss bagian admin berakhir disini

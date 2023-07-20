@@ -136,7 +136,8 @@
         ~.adm-dashboard,
         ~.adm-form,
         ~.adm-krisar,
-        ~.adm-chsi {
+        ~.adm-chsi,
+        ~.adm-alumniadd {
             padding-left: 8rem;
         }
     }
@@ -145,8 +146,9 @@
 .adm-dashboard,
 .adm-form,
 .adm-krisar,
-.adm-chsi {
-    padding-left: 20rem;
+.adm-chsi,
+.adm-alumniadd {
+    padding-left: 15rem;
 }
 
 @media screen and (max-width: 575.9px) {
@@ -163,7 +165,8 @@
             ~.adm-dashboard,
             ~.adm-form,
             ~.adm-krisar,
-            ~.adm-chsi {
+            ~.adm-chsi,
+            ~.adm-alumniadd {
                 padding-left: 1rem;
             }
         }
@@ -172,7 +175,8 @@
     .adm-dashboard,
     .adm-form,
     .adm-krisar,
-    .adm-chsi {
+    .adm-chsi,
+    .adm-alumniadd {
         padding-left: 1rem;
     }
 }

@@ -7,71 +7,84 @@ use Illuminate\Http\Request;
 
 class AlumniController extends Controller
 {
-    public function index()
-    {
-        $data = Alumni::get();
-        return view('alumni.index', [
-            'data' => $data
-        ]);
+
+    public function add() {
+        return view('koneksi.admin.alumniadd');
+    }
+    public function edit() {
+        return view('koneksi.admin.alumniedit');
     }
 
-    public function adminindex()
-    {
-        $data = Alumni::get();
-        return view('alumni.admin.index', [
-            'data' => $data
-        ]);
-    }
+    /* ini punya bagian masyer
+    
+    // public function index()
+    // {
+    //     $data = Alumni::get();
+    //     return view('alumni.index', [
+    //         'data' => $data
+    //     ]);
+    // }
 
-    public function create(Request $request)
-    {
-        Alumni::create([
-            'nama' => $request->nama,
-            'angkatan' => $request->angkatan,
-            'pekerjaan' => $request->pekerjaan,
-        ]);
+    // public function adminindex()
+    // {
+    //     $data = Alumni::get();
+    //     return view('alumni.admin.index', [
+    //         'data' => $data
+    //     ]);
+    // }
 
-        return true;
-    }
+    // public function create(Request $request)
+    // {
+    //     Alumni::create([
+    //         'nama' => $request->nama,
+    //         'angkatan' => $request->angkatan,
+    //         'pekerjaan' => $request->pekerjaan,
+    //     ]);
 
-    public function update(Request $request)
-    {
-        $data = Alumni::find($request->id);
+    //     return true;
+    // }
 
-        if (!$data) {
-            // return not found id
-            return false;
-        }
+    // public function update(Request $request)
+    // {
+    //     $data = Alumni::find($request->id);
 
-        if ($data->nama != $request->nama) {
-            $data->nama = $request->nama;
-        }
+    //     if (!$data) {
+    //         // return not found id
+    //         return false;
+    //     }
 
-        if ($data->angkatan != $request->angkatan) {
-            $data->angkatan = $request->angkatan;
-        }
+    //     if ($data->nama != $request->nama) {
+    //         $data->nama = $request->nama;
+    //     }
 
-        if ($data->pekerjaan != $request->pekerjaan) {
-            $data->pekerjaan = $request->pekerjaan;
-        }
+    //     if ($data->angkatan != $request->angkatan) {
+    //         $data->angkatan = $request->angkatan;
+    //     }
 
-        $data->save();
+    //     if ($data->pekerjaan != $request->pekerjaan) {
+    //         $data->pekerjaan = $request->pekerjaan;
+    //     }
 
-        return true;
+    //     $data->save();
 
-    }
+    //     return true;
 
-    public function remove(Request $request)
-    {
+    // }
 
-        $data = Alumni::find($request->id);
-        if (!$data) {
-            // return id not found
-            return false;
-        }
+    // public function remove(Request $request)
+    // {
 
-        $data->delete();
+    //     $data = Alumni::find($request->id);
+    //     if (!$data) {
+    //         // return id not found
+    //         return false;
+    //     }
 
-        return true;
-    }
+    //     $data->delete();
+
+    //     return true;
+    // }
+
+ini punya bagian mas yer*/
+
 }

@@ -50,8 +50,9 @@
     @if (Auth::User())
         @include('template.koneksi.sidebar-admin')
     @endif
-
+ {{-- container yang berisi classnya ('nama yield', 'tambahan isinya') --}}
     <div class="container @yield('container')">
+        {{-- ini bagian alert --}}
         @if ($message = Session::get('info'))
             <div class="alert alert--info">
                 <div class="alert__content">
@@ -97,7 +98,7 @@
                 <img class="alert__close" src="{{ url('assets/img/alert-close.svg') }}" alt="">
             </div>
         @endif
-
+    {{-- bagian alert berakhir disini--}}
         @yield('content')
 
     </div>
