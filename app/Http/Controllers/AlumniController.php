@@ -8,15 +8,20 @@ use Illuminate\Http\Request;
 class AlumniController extends Controller
 {
 
+    public function index() {
+        return view('koneksi.admin.alumni');
+    }
+
     public function add() {
         return view('koneksi.admin.alumniadd');
     }
+
     public function edit() {
         return view('koneksi.admin.alumniedit');
     }
 
     /* ini punya bagian masyer
-    
+
     // public function index()
     // {
     //     $data = Alumni::get();

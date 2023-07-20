@@ -2864,6 +2864,169 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   border: 1.5px solid rgba(96, 99, 122, 0.6);
 }
 
+.selected {
+  background-color: #c2e7ff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.icons a {
+  display: flex;
+  align-items: center;
+  background-color: rgba(72, 150, 239, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.icons a > * {
+  width: 2rem;
+}
+
+.icons a:first-child {
+  background-color: white;
+  border: 1px solid rgba(31, 31, 31, 0.2);
+}
+
+.icons a:last-child {
+  background-color: rgba(239, 20, 20, 0.3);
+}
+
+.headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headline__wrapper {
+  display: inherit;
+  align-items: baseline;
+}
+
+.headline__title {
+  font-size: 2rem;
+}
+
+.headline__dropdown {
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.headline__add {
+  display: inherit;
+  align-items: center;
+  gap: 1rem;
+  color: #06091B;
+  font-weight: 500;
+  border: 1.5px solid black;
+  border-radius: 12px;
+  padding: 0.8rem 1.6rem;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.headline__add:hover {
+  text-decoration: none;
+  color: inherit;
+  transform: translate(-0.2rem, -0.2rem);
+  box-shadow: 3px 6px 3px -5px rgba(0, 0, 0, 0.2), 3px 5px 3px 1px rgba(0, 0, 0, 0.14), 3px 4px 5px 1px rgba(0, 0, 0, 0.12);
+}
+
+.headline__add:active {
+  transform: translate(0.2rem, 0.2rem);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.main .list {
+  display: inherit;
+  flex-direction: inherit;
+  width: inherit;
+  gap: 0.6rem;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 1.2rem 1.5rem;
+}
+
+.main .search {
+  width: inherit;
+  display: inherit;
+  flex-direction: inherit;
+  gap: 1.5rem;
+}
+
+.main .search__bar {
+  width: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.main .search__bar img {
+  position: absolute;
+  width: 2rem;
+  margin-left: 1rem;
+}
+
+.main .search__bar__input {
+  padding: 0.5rem 1.2rem 0.5rem 3rem;
+  width: inherit;
+  border-radius: 2rem;
+  background-color: #edf2fc;
+}
+
+.main .table {
+  width: inherit;
+  display: inherit;
+  flex-direction: inherit;
+  gap: 1rem;
+}
+
+.main .table__content {
+  width: inherit;
+  border: none;
+}
+
+.main .table__content th {
+  border-bottom: 0.3px solid rgba(96, 99, 122, 0.6);
+}
+
+.main .table__content td {
+  border-bottom: none;
+}
+
+.main .table__content td:not(:first-child),
+.main .table__content th:not(:first-child) {
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.pagination > * {
+  display: inherit;
+  justify-content: center;
+  width: 0.8rem;
+  border-radius: 100%;
+}
+
+.pagination > :hover {
+  background-color: #c2e7ff;
+}
+
 .adm-alumniadd {
   min-height: calc(100vh - 6rem);
   transition: all 0.5s linear;
@@ -2954,7 +3117,7 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   outline: none;
 }
 
-.adm-alumniadd .addContent .add-box form .form-group-add button .btn-primary-mer {
-  background-color: #359BD3;
+.adm-alumniadd .addContent .add-box form .form-group-add button {
+  margin-top: 1rem;
 }
 

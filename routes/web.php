@@ -157,6 +157,7 @@ Route::prefix('chsi')->group(function () {
 // ini untuk admin bagian alumni
 Route::get('/admin/alumni/add', [AlumniController::class, 'add']);
 Route::get('/admin/alumni/edit', [AlumniController::class, 'edit']);
+Route::get('/admin/alumni', [AlumniController::class, 'index'])->name('alumni.index');
 
 /* bagian ini route alumni punya mas yer
 Route::prefix('alumni')->group(function () {
