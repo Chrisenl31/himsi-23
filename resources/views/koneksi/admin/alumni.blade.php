@@ -92,7 +92,7 @@
             <span class="overlay"> </span>
             <div class="modal-box">
                 <h2>Detail Info</h2>
-                <form action="">
+                <div class="detail-info">
                     <div class="field">
                         <div class="field-left">
                             <div class="form-group-detail">
@@ -123,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
                 <div class="buttons">
                     <button type="button" class="close-btn">Close</button>
                 </div>
