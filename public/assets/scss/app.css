@@ -2515,3 +2515,181 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   background-color: #c2e7ff;
 }
 
+section {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+section.active {
+  z-index: 1;
+}
+
+/* wadah untuk modal boxnya */
+
+.overlay {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* wadah untuk modal boxnya */
+
+/* nampilin overlaynya */
+
+section.active .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* nampilin overlaynya */
+
+/* modal boxnya */
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 650px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  position: absolute;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, 0%);
+}
+
+/* modal boxnya */
+
+/* nampilin modal boxnya*/
+
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* nampilin modal boxnya*/
+
+/* modal box detail */
+
+.modal-box h2 .judul {
+  font-style: "poppins";
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.modal-box h4 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+
+.modal-box .buttons {
+  margin-top: 25px;
+}
+
+.modal-box .buttons button {
+  font: size 1.125rem;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 22px;
+  border: none;
+  background: #4070f4;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-box .buttons button:hover {
+  background: #2e5bff;
+}
+
+.modal-box button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0 10px;
+}
+
+/* modal box detail */
+
+/* Modal box isinya */
+
+.modal-box .detail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-box .detail-info .field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.modal-box .detail-info .field .form-group-detail {
+  margin: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-box .detail-info .field .form-group-detail .form-label {
+  margin-bottom: 0.25rem;
+}
+
+.modal-box .detail-info .field .form-group-detail span {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: 2px solid rgba(209, 213, 219, 0.5);
+  background: #fff;
+  padding: 0.5rem 1rem;
+  display: block;
+  overflow-wrap: break-word;
+}
+
+.modal-box .detail-info .field .form-group-detail span:hover {
+  border: 2px solid #3F8EFC;
+  transition: all 0.2s linear;
+}
+
+.modal-box .detail-info .field .field-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.modal-box .detail-info .field .field-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
