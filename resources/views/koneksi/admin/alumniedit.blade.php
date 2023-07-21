@@ -27,11 +27,11 @@
                 </div>
                 <div class="form-group-add">
                     <label class="form-label">Email</label>
-                    <input type="text" class="form-control" placeholder="Email Aktif">
+                    <input type="email" class="form-control" placeholder="Email Aktif">
                 </div>
                 <div class="form-group-add">
                     <label class="form-label">Nomor Telepon</label>
-                    <input type="text" class="form-control" placeholder="+62*****">
+                    <input type="tel" class="form-control" placeholder="+62*****">
                 </div>
                 <div class="form-group-add">
                     <label class="form-label">Jabatan</label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group-add">
                     <label class="form-label">Profil Linkedin</label>
-                    <input type="text" class="form-control" placeholder="Link Linkedin">
+                    <input type="url" class="form-control" placeholder="Link Linkedin">
                 </div>
                 <div class="form-group-add">
                     <label class="form-label">Nama dan Alamat Perusahaan</label>

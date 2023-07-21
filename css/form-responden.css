@@ -1,0 +1,36 @@
+.form-responden {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.form-responden__form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.form-responden__title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+.form-responden__title-section > * {
+  text-align: center;
+}
+.form-responden__input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+.form-responden__input-form > .btn-primary {
+  align-self: flex-end;
+}/*# sourceMappingURL=form-responden.css.map */

@@ -54,9 +54,10 @@
                         <td>Software Developer</td>
                         <td>
                             <div class="icons">
-                                <a href=""><img src="{{ url('assets/img/alumni-info.svg') }}"></a>
-                                <a href=""><img src="{{ url('assets/img/alumni-edit.svg') }}"></a>
-                                <a href=""><img src="{{ url('assets/img/alumni-delete.svg') }}"></a>
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
                             </div>
                         </td>
                     </tr>
@@ -67,10 +68,12 @@
                         <td>Web Developer</td>
                         <td>
                             <div class="icons">
-                                <a href=""><img src="{{ url('assets/img/alumni-info.svg') }}"></a>
-                                <a href=""><img src="{{ url('assets/img/alumni-edit.svg') }}"></a>
-                                <a href=""><img src="{{ url('assets/img/alumni-delete.svg') }}"></a>
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
                             </div>
+
                         </td>
                     </tr>
                 </table>
@@ -83,6 +86,78 @@
             <button>2</button>
             <button>&gt</button>
         </div>
+
+        {{-- modal --}}
+        <section>
+            <span class="overlay"> </span>
+            <div class="modal-box">
+                <h2>Detail Info</h2>
+                <form action="">
+                    <div class="field">
+                        <div class="field-left">
+                            <div class="form-group-detail">
+                                <label class="form-label" for="name">Nama</label>
+                                <span id="name" class="form-control-plaintext">Darfito Danur</span>
+                            </div>
+                            <div class="form-group-detail">
+                                <label class="form-label">Email</label>
+                                <span class="form-control-plaintext">Himsi@gmail.com</span>
+                            </div>
+                            <div class="form-group-detail">
+                                <label class="form-label">Nomor Telepon</label>
+                                <span class="form-control-plaintext">+62*****</span>
+                            </div>
+                        </div>
+                        <div class="field-right">
+                            <div class="form-group-detail">
+                                <label class="form-label">Jabatan</label>
+                                <span class="form-control-plaintext">duduk aja</span>
+                            </div>
+                            <div class="form-group-detail">
+                                <label class="form-label">Profil Linkedin</label>
+                                <span class="form-control-plaintext">ini linknya gan</span>
+                            </div>
+                            <div class="form-group-detail">
+                                <label class="form-label">Nama dan Alamat Perusahaan</label>
+                                <span class="form-control-plaintext">krusty crab</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="buttons">
+                    <button type="button" class="close-btn">Close</button>
+                </div>
+            </div>
+        </section>
     </main>
+
+@endsection
+
+@section('extrajs')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const section = document.querySelector("section");
+            const overlay = document.querySelector(".overlay");
+            const showBtns = document.querySelectorAll(".show-info");
+            const closeBtn = document.querySelector(".close-btn");
+
+            showBtns.forEach(function(showBtn) {
+                showBtn.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    section.classList.add("active");
+                });
+            });
+
+            overlay.addEventListener("click", function(event) {
+                event.preventDefault();
+                section.classList.remove("active");
+            });
+
+            closeBtn.addEventListener("click", function(event) {
+                event.preventDefault();
+                section.classList.remove("active");
+            });
+        });
+    </script>
 
 @endsection

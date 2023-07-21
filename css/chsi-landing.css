@@ -1,0 +1,52 @@
+.chsi-landing {
+  min-height: calc(100vh - 6rem);
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.chsi-landing__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.chsi-landing__title, .chsi-landing__buka-curhat {
+  text-align: center;
+}
+.chsi-landing__form-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.chsi-landing__form-content > .btn-primary {
+  align-self: flex-end;
+}
+.chsi-landing__ornament {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60%;
+  z-index: -1;
+  opacity: 0.1;
+}
+@media screen and (max-width: 991.9px) {
+  .chsi-landing__ornament {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 575.9px) {
+  .chsi-landing__title {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .chsi-landing__form-content {
+    width: 100%;
+  }
+}/*# sourceMappingURL=chsi-landing.css.map */

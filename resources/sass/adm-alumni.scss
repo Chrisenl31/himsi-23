@@ -2,19 +2,49 @@
     background-color: #c2e7ff;
 }
 
+// .icons {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 0.5rem;
+
+//     a {
+//         display: flex;
+//         align-items: center;
+//         background-color: hsla(212, 84%, 61%, 0.3);
+//         border-radius: 6px;
+//         box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+//             0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+//         > * {
+//             width: 2rem;
+//         }
+
+//         &:first-child {
+//             background-color: white;
+//             border: 1px solid rgba(31, 31, 31, 0.2);
+//         }
+
+//         &:last-child {
+//             background-color: rgba(239, 20, 20, 0.3);
+//         }
+//     }
+// }
+
 .icons {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
 
-    a {
+    & > button {
         display: flex;
         align-items: center;
         background-color: hsla(212, 84%, 61%, 0.3);
         border-radius: 6px;
         box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
             0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        padding: 0;
 
         > * {
             width: 2rem;
@@ -103,6 +133,12 @@
         flex-direction: inherit;
         gap: 1.5rem;
 
+        .headline {
+            &__dropdown {
+                margin-left: 1rem;
+            }
+        }
+
         &__bar {
             width: inherit;
             display: flex;
@@ -163,5 +199,186 @@
 
     > :hover {
         background-color: #c2e7ff;
+    }
+}
+
+// popup modal
+
+section {
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    // opacity: 0.3;
+    // background: rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+section.active {
+    z-index: 1;
+}
+/* wadah untuk modal boxnya */
+.overlay {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+/* wadah untuk modal boxnya */
+
+/* nampilin overlaynya */
+section.active .overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* nampilin overlaynya */
+
+.modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* modal boxnya */
+.modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 650px;
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 24px;
+    background-color: #fff;
+    // opacity: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    position: absolute;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, 0%);
+}
+/* modal boxnya */
+
+/* nampilin modal boxnya*/
+section.active .modal-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* nampilin modal boxnya*/
+
+/* modal box detail */
+
+.modal-box h2 .judul {
+    font-style: "poppins";
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.modal-box h4 {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+}
+
+.modal-box .buttons {
+    margin-top: 25px;
+
+    button {
+        font: size 1.125rem;
+        font-weight: 400;
+        color: #fff;
+        padding: 14px 22px;
+        border: none;
+        background: #4070f4;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+            background: #2e5bff;
+        }
+    }
+}
+
+.modal-box button {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0 10px;
+}
+/* modal box detail */
+
+/* Modal box isinya */
+.modal-box {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+
+            .form-group-detail {
+                margin: 0.5rem 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .form-label {
+                    margin-bottom: 0.25rem;
+                }
+
+                span {
+                    width: 100%;
+                    padding: 0.5rem;
+                    border-radius: 0.375rem;
+                    border: 2px solid rgba(209, 213, 219, 0.5);
+                    background: #fff;
+                    padding: 0.5rem 1rem;
+                    display: block;
+                    overflow-wrap: break-word;
+                }
+
+                span:hover {
+                    border: 2px solid $tufts-blue;
+                    transition: all 0.2s linear;
+                }
+            }
+
+            .field-left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                height: 100%;
+            }
+
+            .field-right {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                height: 100%;
+            }
+        }
     }
 }
