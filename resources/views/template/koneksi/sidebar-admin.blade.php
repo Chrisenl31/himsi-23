@@ -41,8 +41,8 @@
                     <div class="sidebar__menu sidebar__menu--alumni"
                         onclick="location.href = '{{ route('alumni.index') }}'">
                         <span class="sidebar__icon">
-                            <img src="{{ url('assets/img/sidebar-form.svg') }}" class="idle">
-                            <img src="{{ url('assets/img/sidebar-active-form.svg') }}" class="active hidden">
+                            <img src="{{ url('assets/img/sidebar-alumni.svg') }}" class="idle">
+                            <img src="{{ url('assets/img/sidebar-active-alumni.svg') }}" class="active hidden">
                         </span>
                         <p>Alumni</p>
                     </div>
