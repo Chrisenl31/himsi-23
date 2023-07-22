@@ -3040,9 +3040,9 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   width: 100%;
   border-radius: 24px;
   background-color: #fff;
-  transition: 0.3s;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   border: none;
+  transition: box-shadow 0.5s;
 }
 
 .modal-box__wrapper {

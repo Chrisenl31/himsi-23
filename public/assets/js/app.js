@@ -19500,43 +19500,54 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//sidebar js
 // activate sidebar menu
-if (location.pathname == '/admin') {
-  $('.sidebar__menu').each(function (x) {
-    $('.sidebar__menu')[x].classList.remove('active');
+// dashboard
+if (location.pathname == "/admin") {
+  $(".sidebar__menu").each(function (x) {
+    $(".sidebar__menu")[x].classList.remove("active");
   });
-  $('.sidebar__menu--dashboard')[0].classList.add('active');
-} else if (location.pathname.includes("/chsi/admin/curhat")) {
-  $('.sidebar__menu').each(function (x) {
-    $('.sidebar__menu')[x].classList.remove('active');
+  $(".sidebar__menu--dashboard")[0].classList.add("active");
+} //chsi
+else if (location.pathname.includes("/chsi/admin/curhat")) {
+  $(".sidebar__menu").each(function (x) {
+    $(".sidebar__menu")[x].classList.remove("active");
   });
-  $('.sidebar__menu--curhat')[0].classList.add('active');
-} else if (location.pathname.includes('/form')) {
-  $('.sidebar__menu').each(function (x) {
-    $('.sidebar__menu')[x].classList.remove('active');
+  $(".sidebar__menu--curhat")[0].classList.add("active");
+} //form
+else if (location.pathname.includes("/form")) {
+  $(".sidebar__menu").each(function (x) {
+    $(".sidebar__menu")[x].classList.remove("active");
   });
-  $('.sidebar__menu--form')[0].classList.add('active');
-} else if (location.pathname.includes('/chsi/admin/kritik')) {
-  $('.sidebar__menu').each(function (x) {
-    $('.sidebar__menu')[x].classList.remove('active');
+  $(".sidebar__menu--form")[0].classList.add("active");
+} //alumni
+else if (location.pathname.includes("/admin/alumni")) {
+  $(".sidebar__menu").each(function (x) {
+    $(".sidebar__menu")[x].classList.remove("active");
   });
-  $('.sidebar__menu--krisar')[0].classList.add('active');
+  $(".sidebar__menu--alumni")[0].classList.add("active");
+} //krisar
+else if (location.pathname.includes("/chsi/admin/kritik")) {
+  $(".sidebar__menu").each(function (x) {
+    $(".sidebar__menu")[x].classList.remove("active");
+  });
+  $(".sidebar__menu--krisar")[0].classList.add("active");
 } // change image on active sidebar menu
 
 
-$('.sidebar__menu').each(function (x) {
-  if ($('.sidebar__menu')[x].classList.contains('active')) {
-    $('.sidebar__icon .idle')[x].classList.add('hidden');
-    $('.sidebar__icon .active')[x].classList.remove('hidden');
+$(".sidebar__menu").each(function (x) {
+  if ($(".sidebar__menu")[x].classList.contains("active")) {
+    $(".sidebar__icon .idle")[x].classList.add("hidden");
+    $(".sidebar__icon .active")[x].classList.remove("hidden");
   } else {
-    $('.sidebar__icon .idle')[x].classList.remove('hidden');
-    $('.sidebar__icon .active')[x].classList.add('hidden');
+    $(".sidebar__icon .idle")[x].classList.remove("hidden");
+    $(".sidebar__icon .active")[x].classList.add("hidden");
   }
 }); // toggler sidebar
 
-$('.sidebar__toggle').click(function () {
+$(".sidebar__toggle").click(function () {
   // console.log($('.sidebar__container')[0]);
-  $('.sidebar')[0].classList.toggle('sidebar__expander');
+  $(".sidebar")[0].classList.toggle("sidebar__expander");
 });
 
 /***/ }),
@@ -19559,8 +19570,8 @@ $('.sidebar__toggle').click(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Organisasi Kepanitiaan\Himsi\himsi-23\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Organisasi Kepanitiaan\Himsi\himsi-23\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Darfito\Documents\FITO's\Tugas dan sebagainya\cool yeah\Rustek 2023\Ngeweb Himsi\himsi-22\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Darfito\Documents\FITO's\Tugas dan sebagainya\cool yeah\Rustek 2023\Ngeweb Himsi\himsi-22\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
