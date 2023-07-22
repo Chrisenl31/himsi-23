@@ -142,75 +142,35 @@
     }
 }
 
-// popup modal
-
-section {
-    // border: 1px solid #000;
-    position: absolute;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    // opacity: 0.3;
-    // background: rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-}
-section.active {
-    z-index: 1;
-}
-/* wadah untuk modal boxnya */
-.overlay {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-}
-/* wadah untuk modal boxnya */
-
-/* nampilin overlaynya */
-section.active .overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-/* nampilin overlaynya */
-
-
 /* modal boxnya */
 .modal-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     max-width: 650px;
     width: 100%;
-    padding: 30px 20px;
     border-radius: 24px;
     background-color: #fff;
-    // opacity: 1;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    position: absolute;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transform: translate(-50%, 0%);
+    border: none;
+&[open]{
+animation: myFadeIn 0.3s ease normal;
 }
-/* modal boxnya */
 
-/* nampilin modal boxnya*/
-section.active .modal-box {
-    opacity: 1;
-    pointer-events: auto;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 20px;
+    }
 }
-/* nampilin modal boxnya*/
-
-/* modal box detail */
+@keyframes myFadeIn{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+// /* modal box detail */
 
 .modal-box h2 .judul {
     font-style: "poppins";
@@ -251,10 +211,12 @@ section.active .modal-box {
     padding: 6px 12px;
     margin: 0 10px;
 }
-/* modal box detail */
+// /* modal box detail */
 
-/* Modal box isinya */
+// /* Modal box isinya */
 .modal-box {
+    margin: auto;
+
     .detail-info {
         display: flex;
         flex-direction: column;

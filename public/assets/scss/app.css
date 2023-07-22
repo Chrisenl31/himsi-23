@@ -2515,77 +2515,49 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   background-color: #c2e7ff;
 }
 
-section {
-  position: absolute;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-}
-
-section.active {
-  z-index: 1;
-}
-
-/* wadah untuk modal boxnya */
-
-.overlay {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* wadah untuk modal boxnya */
-
-/* nampilin overlaynya */
-
-section.active .overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* nampilin overlaynya */
-
 /* modal boxnya */
 
 .modal-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   max-width: 650px;
   width: 100%;
-  padding: 30px 20px;
   border-radius: 24px;
   background-color: #fff;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s;
-  position: absolute;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  transform: translate(-50%, 0%);
+  border: none;
 }
 
-/* modal boxnya */
-
-/* nampilin modal boxnya*/
-
-section.active .modal-box {
-  opacity: 1;
-  pointer-events: auto;
+.modal-box[open] {
+  -webkit-animation: myFadeIn 0.3s ease normal;
+          animation: myFadeIn 0.3s ease normal;
 }
 
-/* nampilin modal boxnya*/
+.modal-box__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 20px;
+}
 
-/* modal box detail */
+@-webkit-keyframes myFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes myFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 .modal-box h2 .judul {
   font-style: "poppins";
@@ -2627,9 +2599,9 @@ section.active .modal-box {
   margin: 0 10px;
 }
 
-/* modal box detail */
-
-/* Modal box isinya */
+.modal-box {
+  margin: auto;
+}
 
 .modal-box .detail-info {
   display: flex;
