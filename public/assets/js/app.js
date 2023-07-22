@@ -19559,8 +19559,8 @@ $('.sidebar__toggle').click(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Darfito\Documents\FITO's\Tugas dan sebagainya\cool yeah\Rustek 2023\Ngeweb Himsi\himsi-22\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Darfito\Documents\FITO's\Tugas dan sebagainya\cool yeah\Rustek 2023\Ngeweb Himsi\himsi-22\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Organisasi Kepanitiaan\Himsi\himsi-23\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Organisasi Kepanitiaan\Himsi\himsi-23\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

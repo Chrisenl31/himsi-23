@@ -2,35 +2,6 @@
     background-color: #c2e7ff;
 }
 
-// .icons {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 0.5rem;
-
-//     a {
-//         display: flex;
-//         align-items: center;
-//         background-color: hsla(212, 84%, 61%, 0.3);
-//         border-radius: 6px;
-//         box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-//             0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-
-//         > * {
-//             width: 2rem;
-//         }
-
-//         &:first-child {
-//             background-color: white;
-//             border: 1px solid rgba(31, 31, 31, 0.2);
-//         }
-
-//         &:last-child {
-//             background-color: rgba(239, 20, 20, 0.3);
-//         }
-//     }
-// }
-
 .icons {
     display: flex;
     align-items: center;
@@ -116,6 +87,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    margin-bottom: 4rem;
 
     .list {
         display: inherit;
@@ -202,80 +174,27 @@
     }
 }
 
-// popup modal
-
-section {
-    position: absolute;
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    // opacity: 0.3;
-    // background: rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-}
-section.active {
-    z-index: 1;
-}
-/* wadah untuk modal boxnya */
-.overlay {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-}
-/* wadah untuk modal boxnya */
-
-/* nampilin overlaynya */
-section.active .overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-/* nampilin overlaynya */
-
-.modal-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 /* modal boxnya */
 .modal-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     max-width: 650px;
     width: 100%;
-    padding: 30px 20px;
     border-radius: 24px;
     background-color: #fff;
-    // opacity: 1;
-    opacity: 0;
-    pointer-events: none;
     transition: 0.3s;
-    position: absolute;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transform: translate(-50%, 0%);
-}
-/* modal boxnya */
+    border: none;
 
-/* nampilin modal boxnya*/
-section.active .modal-box {
-    opacity: 1;
-    pointer-events: auto;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 20px;
+    }
 }
-/* nampilin modal boxnya*/
 
-/* modal box detail */
+// /* modal box detail */
 
 .modal-box h2 .judul {
     font-style: "poppins";
@@ -316,10 +235,12 @@ section.active .modal-box {
     padding: 6px 12px;
     margin: 0 10px;
 }
-/* modal box detail */
+// /* modal box detail */
 
-/* Modal box isinya */
+// /* Modal box isinya */
 .modal-box {
+    margin: auto;
+
     .detail-info {
         display: flex;
         flex-direction: column;

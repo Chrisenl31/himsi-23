@@ -76,6 +76,141 @@
 
                         </td>
                     </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cakra Kusuma Erlangga Ramdani</td>
+                        <td><a href="">linkedin</a></td>
+                        <td>cak@gmail.com</td>
+                        <td>Web Developer</td>
+                        <td>
+                            <div class="icons">
+                                <button class="show-info" type="button"><img
+                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                            </div>
+
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -88,9 +223,8 @@
         </div>
 
         {{-- modal --}}
-        <section>
-            <span class="overlay"> </span>
-            <div class="modal-box">
+        <dialog class="modal-box">
+            <div class="modal-box__wrapper">
                 <h2>Detail Info</h2>
                 <div class="detail-info">
                     <div class="field">
@@ -128,7 +262,7 @@
                     <button type="button" class="close-btn">Close</button>
                 </div>
             </div>
-        </section>
+        </dialog>
     </main>
 
 @endsection
@@ -136,26 +270,25 @@
 @section('extrajs')
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const section = document.querySelector("section");
-            const overlay = document.querySelector(".overlay");
-            const showBtns = document.querySelectorAll(".show-info");
-            const closeBtn = document.querySelector(".close-btn");
+            const btns = document.querySelectorAll(".show-info");
+            const modal = document.querySelector(".modal-box");
+            const close = document.querySelector(".close-btn");
+            const body = document.querySelector("body");
 
-            showBtns.forEach(function(showBtn) {
-                showBtn.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    section.classList.add("active");
+            btns.forEach(function(btn)
+            {
+                btn.addEventListener("click", (event) => {
+                    event.stopPropagation()
+                    modal.showModal();
                 });
             });
 
-            overlay.addEventListener("click", function(event) {
-                event.preventDefault();
-                section.classList.remove("active");
-            });
-
-            closeBtn.addEventListener("click", function(event) {
-                event.preventDefault();
-                section.classList.remove("active");
+            body.addEventListener("click", function(e)
+            {
+                // console.log(e.target);
+                if (e.target === modal || e.target === close) {
+                    modal.close();
+                }
             });
         });
     </script>
