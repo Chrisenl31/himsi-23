@@ -8,20 +8,20 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5|^8.0",
-        "doctrine/dbal": "^2.12.1",
-        "fideloper/proxy": "^4.4",
-        "laravel/framework": "^6.20",
-        "laravel/tinker": "^2.5",
-        "livewire/livewire": "^1.0",
+        "php": "^8.1",
+        "doctrine/dbal": "^3.6",
+        "laravel/framework": "^10.0",
+        "laravel/tinker": "^2.0",
+        "livewire/livewire": "^2.0",
         "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
-        "facade/ignition": "^1.16.4",
+
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^3.0",
-        "phpunit/phpunit": "^8.5.8|^9.3.3"
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.0",
+        "guzzlehttp/guzzle": "^7.0.1"
     },
     "config": {
         "optimize-autoloader": true,
