@@ -1,87 +1,90 @@
-<div class="table-jawaban">
-    <div class="button-group">
-        <div class="input-group">
-            <label for="filter-by">filter-by</label>
-            <select wire:model="filterkey" name="" id="filter-by" class="form-control">
-                <option value="" disabled selected>filter-by</option>
+{{-- Class 'active' added as a workaround for the Himsi Form bug --}}
+<div class="form-show__content-body form-show__content-body--jawaban active">
+    <div class="form-show__jawaban-filter">
+        <div class="form__group">
+            <label for="filter-by" class="form__label">Urutkan berdasarkan</label>
+            <select wire:model="filterkey" name="filter-by" id="filter-by" class="form__control">
+                <option value="" disabled selected>Urutkan berdasarkan</option>
                 @foreach ($pertanyaan as $per)
                     <option value="{{ $per->id }}">{{ $per->pertanyaan }}</option>
                 @endforeach
             </select>
         </div>
-        <div class="input-group">
-            <label for="value-by">Value Filter {{ $filtertype }}</label>
+
+        <div class="form__group">
+            <label for="value-by" class="form__label">Urutkan berdasarkan</label>
             @if ($filtertype == 'select')
-                <select name="" id="value-by" class="form-control hide" wire:model="filterval">
+                <select name="" id="value-by" class="form__control" wire:model="filterval">
                     <option value="" disabled selected>value-filter</option>
                     @foreach ($filteropt as $f)
                         <option value="{{ $f }}">{{ $f }}</option>
                     @endforeach
                 </select>
             @elseif($filtertype == 'checkbox')
-
             @else
                 <input id="value-by" wire:model="filterval" type="{{ $filtertype ? $filtertype : 'text' }}"
-                    class="form-control" placeholder="value">
+                    class="form__control" placeholder="value">
             @endif
-
-
         </div>
-        <a wire:click="dofilter" class="btn-primary">Cari</a>
+
+        <a wire:click="dofilter" class=" button btn-primary">Cari</a>
+
         @if ($filter)
-            <a wire:click="resetfilter" class="alert-warning-form" href="#">Reset Filter</a>
+            <a wire:click="resetfilter" class="button btn-secondary" href="#">Reset Filter</a>
         @endif
-        {{-- <div class="input-group">
-            <label for="show-by">show-by</label>
-            <select name="" id="show-by" class="form-control">
-                <option value="5" selected>5</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-            </select>
-        </div> --}}
     </div>
 
     @if ($filter)
         @if (sizeof($jawaban) == 0)
-            <div class="alert alert-danger-form">
+            <h4 class="form-show__tidak-sesuai">
                 tidak ada data sesuai
-            </div>
+            </h4>
         @else
-            <div class="alert alert-success-form">
+            <h4 class="form-show__sesuai">
                 Jumlah data diperoleh : {{ sizeof($jawaban) }} data
-            </div>
-            {{-- {{ dd($jawaban) }} --}}
+            </h4>
             @foreach ($jawaban as $j)
-                <div class="jawaban-row">
-                    <span>{{ $loop->iteration }}</span>
-                    <span class="p">
-                        @foreach ($j->penjawab->jawaban as $jaw)
-                            <strong>
-                                {{ $jaw->pertanyaan->pertanyaan }} :
-                            </strong>
-                            {{ $jaw->jawaban }}
-                        @endforeach
-                    </span>
+                <div class="form-show__responden">
+                    <p class="form-show__responden-label">{{ $loop->iteration }}</p>
+                    @foreach ($j->penjawab->jawaban as $jaw)
+                        <div class="form-show__responden-row">
+                            <p class="form-show__responden-label">{{ $jaw->pertanyaan->pertanyaan }}</p>
+                            <p class="form-show__responden-value">{{ $jaw->jawaban }}</p>
+                        </div>
+                    @endforeach
                 </div>
             @endforeach
         @endif
     @else
-        <div class="alert alert-success-form">
+        <h4 class="form-show__sesuai">
             Jumlah data diperoleh : {{ sizeof($penjawab) }} data
-        </div>
+        </h4>
         @foreach ($penjawab as $p)
-            <div class="jawaban-row">
-                <span>{{ $loop->iteration }}</span>
+            <div class="form-show__responden">
+                <p class="form-show__responden-label">{{ $loop->iteration }}</p>
                 @foreach ($p->jawaban as $jawaban)
-
-                    <span class="p"><strong>{{ $jawaban->pertanyaan->pertanyaan }} :
-                        </strong>{{ $jawaban->jawaban }}</span>
+                    <div class="form-show__responden-row">
+                        <p class="form-show__responden-label">{{ $jawaban->pertanyaan->pertanyaan }}</p>
+                        <p class="form-show__responden-value">{{ $jawaban->jawaban }}</p>
+                    </div>
                 @endforeach
             </div>
         @endforeach
     @endif
 
-    <div class="pagination hide" id="jawaban-row-pagination">
 
-    </div>
+    <script>
+        //Temporary workaround for the bug
+        //Might need to find better solution
+
+        document.addEventListener('livewire:load', function () {
+
+            if ($('.form-show__content-body--tampilan')[0].classList.contains('active') || $('.form-show__content-body--pertanyaan')[0].classList.contains('active')){
+                $('.form-show__content-body--jawaban')[0].classList.remove('active')
+            }
+
+        })
+
+    </script>
+
 </div>

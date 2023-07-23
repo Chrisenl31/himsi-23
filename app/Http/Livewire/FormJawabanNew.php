@@ -36,7 +36,7 @@ class FormJawabanNew extends Component
             }
         }
 
-        if ($this->filter) {
+        if ($this->filterval != null) {
             $jawaban = AppFormJawaban::with(['penjawab','penjawab.jawaban', 'penjawab.jawaban.pertanyaan'])
                                     ->where('pertanyaan_id', $this->filterkey)
                                     ->where('jawaban','like', '%'.$this->filterval.'%')
@@ -49,8 +49,8 @@ class FormJawabanNew extends Component
 
         $this->pertanyaan = FormPertanyaan::where('form_id',$this->formid)->get();
 
-        // return view('livewire.form-jawaban-new');
-        return view('livewire.form-jawaban-koneksi');
+        return view('livewire.form-jawaban-new');
+        //return view('livewire.form-jawaban-koneksi');
     }
 
     public function dofilter()
