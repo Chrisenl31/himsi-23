@@ -38,6 +38,7 @@
                         <p>Form</p>
                     </div>
                     {{-- Khususon User == Hublu --}}
+                    @if (Auth::User()->email == 'hublu')
                     <div class="sidebar__menu sidebar__menu--alumni"
                         onclick="location.href = '{{ route('alumni.index') }}'">
                         <span class="sidebar__icon">
@@ -46,6 +47,7 @@
                         </span>
                         <p>Alumni</p>
                     </div>
+                    @endif
                     <div class="sidebar__menu sidebar__menu--krisar"
                         onclick="location.href = '{{ route('chsi.admin.kritik.index') }}'">
                         <span class="sidebar__icon">
