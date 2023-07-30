@@ -11,31 +11,7 @@ class AlumniController extends Controller
 
     public function index()
     {
-        $data = Form::with([
-            'pertanyaan', 'penjawab', 'penjawab.jawaban',
-            'penjawab.jawaban.pertanyaan'
-        ])->where('id', 70)->first();
-
-            $data->pertanyaan = $data->pertanyaan->sortBy('sorting')->all();
-            $data['inputdeadline'] = join("T", explode(" ", $data->deadline));
-
-            $table = [];
-
-            foreach($data->penjawab as $index=>$entry){
-                $array = [
-                    'nama' => $entry->jawaban[0]->jawaban,
-                    'email' => $entry->jawaban[1]->jawaban,
-                    'linkedin' => $entry->jawaban[2]->jawaban,
-                    'pekerjaan' => $entry->jawaban[11]->jawaban
-                ];
-                array_push($table, $array);
-            };
-
-            $alumni = collect($table);
-
-            return view('koneksi.admin.alumni', [
-                'alumni' => $alumni,
-            ]);
+        return view('koneksi.admin.alumni');
     }
 
     public function add() {
