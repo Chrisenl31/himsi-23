@@ -47,25 +47,13 @@
                         <th>Bidang Pekerjaan</th>
                         <th>Action</th>
                     </tr>
+                
+                    @foreach ($alumni as $entry)
                     <tr>
-                        <td>Darfito Danur</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>darfito@gmail.com</td>
-                        <td>Software Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
+                        <td>{{ $entry["nama"] }}</td>
+                        <td><a href="//{{ $entry["linkedin"] }}">linkedin</a></td>
+                        <td>{{ $entry["email"] }}</td>
+                        <td>{{ $entry["pekerjaan"] }}</td>
                         <td>
                             <div class="icons">
                                 <button class="show-info" type="button"><img
@@ -76,141 +64,7 @@
 
                         </td>
                     </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cakra Kusuma Erlangga Ramdani</td>
-                        <td><a href="">linkedin</a></td>
-                        <td>cak@gmail.com</td>
-                        <td>Web Developer</td>
-                        <td>
-                            <div class="icons">
-                                <button class="show-info" type="button"><img
-                                        src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
-                            </div>
-
-                        </td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

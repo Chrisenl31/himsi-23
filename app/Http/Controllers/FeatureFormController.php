@@ -73,7 +73,7 @@ class FeatureFormController extends Controller
 
         /*
         return back dengan flash message sukses
-        'mohon cek di inbox utama email, 
+        'mohon cek di inbox utama email,
         atau MUNGKIN bagian spam email'
         */
         session()->flash('success', 'Berhasil membuat form, silahkan cek email anda');
@@ -92,7 +92,7 @@ class FeatureFormController extends Controller
         ])->where('token', $token)->first();
         // dd($data);
 
-        
+
         if ($data) {
             $data->pertanyaan = $data->pertanyaan->sortBy('sorting')->all();
             $data['inputdeadline'] = join("T", explode(" ", $data->deadline));
@@ -109,7 +109,7 @@ class FeatureFormController extends Controller
 
     /**
      * GET ACCESS
-     * mengunduh data 
+     * mengunduh data
      */
     public function excel($token)
     {
@@ -154,7 +154,7 @@ class FeatureFormController extends Controller
             'afterform' => $request->afterform,
             'afterformlink' => $request->afterformlink,
         ]);
-        
+
         session()->flash('success','Sukses mengupdate Form');
         return redirect()->back();
     }
@@ -280,7 +280,7 @@ class FeatureFormController extends Controller
      */
     public function qdestroy(Request $request, $token, $qid)
     {
-        // 
+        //
         if (!Form::where('token',$token)->first()) {
             session()->flash('error','Token untuk Form salah');
             return redirect()->route('f.form.index');
@@ -306,7 +306,7 @@ class FeatureFormController extends Controller
      */
     public function qsort(Request $request, $token)
     {
-        // 
+        //
         $p = FormPertanyaan::with(['form', 'form.pertanyaan'])->find($request->pertanyaan);
 
         if($p->sorting == (int)$request->number){
