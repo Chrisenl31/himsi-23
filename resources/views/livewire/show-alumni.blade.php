@@ -21,7 +21,7 @@
                 </div>
                 <div class="search__bar">
                     <img src="{{ url('assets/img/search-alumni.svg') }}" alt="">
-                    <input type="search" class="search__bar__input" placeholder="Telusuri Data Alumni">
+                    <input wire:model="search" type="search" class="search__bar__input" placeholder="Telusuri Data Alumni">
                 </div>
             </form>
             {{-- Main Content -> List of Alumni --}}

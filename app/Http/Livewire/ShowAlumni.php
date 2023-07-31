@@ -11,7 +11,10 @@ class ShowAlumni extends Component
     use WithPagination;
 
     public $alumni;
+    public $search;
 
+    //inisialisasi variable alumni
+    //dijadikan associative array biar gampang sorting nya
     public function mount(){
         $data = Form::with([
             'pertanyaan', 'penjawab', 'penjawab.jawaban',
@@ -38,7 +41,28 @@ class ShowAlumni extends Component
 
     public function render()
     {
+        //convert alumni ke collection
         $data = collect($this->alumni);
+
+        //jika search memiliki value
+        //search kolom 'nama' dan kolom 'pekerjaan'
+        if ($this->search != null){
+
+            $search = $this->search;
+
+            $result = $data->filter(function ($item) use ($search) {
+                return false !== stripos($item["nama"], $search);
+            });
+            $result2 = $data->filter(function ($item) use ($search) {
+                return false !== stripos($item["pekerjaan"], $search);
+            });
+
+            $merged = $result->merge($result2)->unique();
+
+            return view('livewire.show-alumni', [
+                'alumnis' => $merged->paginate(5),
+            ]);
+        }
 
         return view('livewire.show-alumni', [
             'alumnis' => $data->paginate(5),
