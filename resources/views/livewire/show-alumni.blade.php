@@ -43,7 +43,7 @@
                         <td>{{ $entry["pekerjaan"] }}</td>
                         <td>
                             <div class="icons">
-                                <button class="show-info" type="button"><img
+                                <button class="show-info" type="button" id="show-info-{{ $loop->iteration }}"><img
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
@@ -51,6 +51,47 @@
 
                         </td>
                     </tr>
+                    {{-- modal --}}
+                    <dialog class="modal-box" id="modal-box-{{ $loop->iteration }}">
+                        <div class="modal-box__wrapper">
+                            <h2>Detail Info</h2>
+                            <div class="detail-info">
+                                <div class="field">
+                                    <div class="field-left">
+                                        <div class="form-group-detail">
+                                            <label class="form-label" for="name">Nama</label>
+                                            <span id="name" class="form-control-plaintext">{{ $entry["nama"] }}</span>
+                                        </div>
+                                        <div class="form-group-detail">
+                                            <label class="form-label">Email</label>
+                                            <span class="form-control-plaintext">{{ $entry["email"] }}</span>
+                                        </div>
+                                        <div class="form-group-detail">
+                                            <label class="form-label">Nomor Telepon</label>
+                                            <span class="form-control-plaintext">{{ $entry["telp"] }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="field-right">
+                                        <div class="form-group-detail">
+                                            <label class="form-label">Jabatan</label>
+                                            <span class="form-control-plaintext">{{ $entry["pekerjaan"] }}</span>
+                                        </div>
+                                        <div class="form-group-detail">
+                                            <label class="form-label">Profil Linkedin</label>
+                                            <span class="form-control-plaintext">{{ $entry["linkedin"] }}</span>
+                                        </div>
+                                        <div class="form-group-detail">
+                                            <label class="form-label">Nama dan Alamat Perusahaan</label>
+                                            <span class="form-control-plaintext">{{ $entry["perusahaan"] }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button type="button" class="close-btn">Close</button>
+                            </div>
+                        </div>
+                    </dialog>
                     @endforeach
                 </table>
             </div>
@@ -58,46 +99,54 @@
         {{-- Pagination --}}
         {{ $alumnis->links('livewire.custom-pagination') }}
 
-        {{-- modal --}}
-        <dialog class="modal-box">
-            <div class="modal-box__wrapper">
-                <h2>Detail Info</h2>
-                <div class="detail-info">
-                    <div class="field">
-                        <div class="field-left">
-                            <div class="form-group-detail">
-                                <label class="form-label" for="name">Nama</label>
-                                <span id="name" class="form-control-plaintext">Darfito Danur</span>
-                            </div>
-                            <div class="form-group-detail">
-                                <label class="form-label">Email</label>
-                                <span class="form-control-plaintext">Himsi@gmail.com</span>
-                            </div>
-                            <div class="form-group-detail">
-                                <label class="form-label">Nomor Telepon</label>
-                                <span class="form-control-plaintext">+62*****</span>
-                            </div>
-                        </div>
-                        <div class="field-right">
-                            <div class="form-group-detail">
-                                <label class="form-label">Jabatan</label>
-                                <span class="form-control-plaintext">duduk aja</span>
-                            </div>
-                            <div class="form-group-detail">
-                                <label class="form-label">Profil Linkedin</label>
-                                <span class="form-control-plaintext">ini linknya gan</span>
-                            </div>
-                            <div class="form-group-detail">
-                                <label class="form-label">Nama dan Alamat Perusahaan</label>
-                                <span class="form-control-plaintext">krusty crab</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <button type="button" class="close-btn">Close</button>
-                </div>
-            </div>
-        </dialog>
     </main>
 </div>
+
+
+    <script>
+
+
+            @foreach ($alumnis as $entry)
+            var btn{{ $loop->iteration }} = document.getElementById('show-info-{{ $loop->iteration }}')
+            var dialog{{ $loop->iteration }} = document.getElementById('modal-box-{{ $loop->iteration }}')
+            btn{{ $loop->iteration }}.addEventListener("click", (event) => {
+                    event.stopPropagation()
+                    dialog{{ $loop->iteration }}.showModal();
+                });
+
+            @endforeach
+
+            const body = document.querySelector("body");
+            body.addEventListener("click", function(e)
+            {
+                document.querySelector("[open='']").close()
+            });
+
+            const close = document.querySelectorAll(".close-btn");
+            close.forEach(function(closeBtn)
+            {
+                closeBtn.addEventListener("click", (event) => {
+                    document.querySelector("[open='']").close()
+                })
+            })
+
+
+
+
+        /*document.addEventListener("DOMContentLoaded", function() {
+            const btns = document.querySelectorAll(".show-info");
+            const modal = document.querySelector(".modal-box");
+            const close = document.querySelector(".close-btn");
+            const body = document.querySelector("body");
+
+            btns.forEach(function(btn)
+            {
+                btn.addEvsentListener("click", (event) => {
+                    event.stopPropagation()
+                    modal.showModal();
+                });
+            });
+
+        });*/
+    </script>
+

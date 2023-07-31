@@ -16,30 +16,4 @@
 
 @endsection
 
-@section('extrajs')
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const btns = document.querySelectorAll(".show-info");
-            const modal = document.querySelector(".modal-box");
-            const close = document.querySelector(".close-btn");
-            const body = document.querySelector("body");
 
-            btns.forEach(function(btn)
-            {
-                btn.addEventListener("click", (event) => {
-                    event.stopPropagation()
-                    modal.showModal();
-                });
-            });
-
-            body.addEventListener("click", function(e)
-            {
-                // console.log(e.target);
-                if (e.target === modal || e.target === close) {
-                    modal.close();
-                }
-            });
-        });
-    </script>
-
-@endsection

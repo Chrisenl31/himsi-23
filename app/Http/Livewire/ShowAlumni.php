@@ -31,7 +31,9 @@ class ShowAlumni extends Component
                 'nama' => $entry->jawaban[0]->jawaban,
                 'email' => $entry->jawaban[1]->jawaban,
                 'linkedin' => $entry->jawaban[2]->jawaban,
-                'pekerjaan' => $entry->jawaban[11]->jawaban
+                'pekerjaan' => $entry->jawaban[11]->jawaban,
+                'telp' => $entry->jawaban[13]->jawaban,
+                'perusahaan' => $entry->jawaban[6]->jawaban
             ];
             array_push($table, $array);
         };
