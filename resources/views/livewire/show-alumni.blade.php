@@ -46,7 +46,11 @@
                                 <button class="show-info" type="button" id="show-info-{{ $loop->iteration }}"><img
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                                <form method="post" action="{{ url("/admin/alumni/remove") }}" >
+                                    @csrf
+                                    <input name="id" type="hidden" value="{{ $entry['id'] }}">
+                                    <button type="submit"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                                </form>
                             </div>
 
                         </td>

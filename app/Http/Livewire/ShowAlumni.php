@@ -28,6 +28,7 @@ class ShowAlumni extends Component
 
         foreach($data->penjawab as $index=>$entry){
             $array = [
+                'id' => $entry->id,
                 'nama' => $entry->jawaban[0]->jawaban,
                 'email' => $entry->jawaban[1]->jawaban,
                 'linkedin' => $entry->jawaban[2]->jawaban,

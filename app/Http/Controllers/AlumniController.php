@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Form;
 use App\Alumni;
+use App\FormJawaban;
+use App\FormPenjawab;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
@@ -20,6 +22,20 @@ class AlumniController extends Controller
 
     public function edit() {
         return view('koneksi.admin.alumniedit');
+    }
+
+    public function remove(Request $request)
+    {
+        $data = FormPenjawab::find($request->id);
+         if (!$data) {
+             // return id not found
+             return false;
+         }
+
+         FormJawaban::where('penjawab_id', $request->id)->delete();
+         $data->delete();
+
+         return redirect('/admin/alumni');
     }
 
     /* ini punya bagian masyer
