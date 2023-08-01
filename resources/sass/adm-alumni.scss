@@ -184,6 +184,10 @@
     border: none;
     transition: box-shadow 0.5s;
 
+    &::backdrop{
+         backdrop-filter: blur(1px);
+    }
+
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -302,3 +306,6 @@
         }
     }
 }
+
+
+

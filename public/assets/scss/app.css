@@ -3045,6 +3045,16 @@ input[name=respon]:checked + .chsi-add__balasan-label > span {
   transition: box-shadow 0.5s;
 }
 
+.modal-box::-webkit-backdrop {
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+.modal-box::backdrop {
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
 .modal-box__wrapper {
   display: flex;
   flex-direction: column;

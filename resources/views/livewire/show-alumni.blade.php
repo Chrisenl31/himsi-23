@@ -45,19 +45,23 @@
                         <td>{{ $entry["pekerjaan"] }}</td>
                         <td>
                             <div class="icons" wire:key="icons-{{ $loop->iteration }}">
+
+                                {{-- tombol show info --}}
                                 <button class="show-info" type="button" id="show-info-{{ $loop->iteration }}"><img
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                {{-- remove --}}
                                 <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}">
                                     @csrf
                                     <input name="id" type="hidden" value="{{ $entry['id'] }}" wire:key="value-{{ $entry['id'] }}">
-                                    <button type="submit"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                                    {{-- tombol remove --}}
+                                    <button id="btn-remove-{{ $loop->iteration }}" ><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
                                 </form>
                             </div>
 
                         </td>
                     </tr>
-                    {{-- modal --}}
+                    {{-- modals show info --}}
                     <dialog class="modal-box" id="modal-box-{{ $loop->iteration }}" wire:key="dialog-{{ $loop->iteration }}">
                         <div class="modal-box__wrapper">
                             <h2>Detail Info</h2>
@@ -98,6 +102,20 @@
                             </div>
                         </div>
                     </dialog>
+                    
+                    {{-- modals remove --}}
+                    <dialog class="modal-box" id="remove-modal-{{ $loop->iteration }}">
+                        <div class="modal-box__remove">
+                            <div class="modal-box__wrapper">
+                                <h2>Remove Data</h2>
+                                <p>Apakah anda yakin ingin menghapus data ini?</p>
+                                <div class="buttons">
+                                    <button type="button" class="close-btn">Cancel</button>
+                                    <button type="button" class="close-btn">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </dialog>
                     @endforeach
                 </table>
             </div>
@@ -108,13 +126,21 @@
     </main>
     <script>
 
-
+// script buat permodalan dan dialog
             @foreach ($alumnis as $entry)
+            //tombolnya
             var btn{{ $loop->iteration }} = document.getElementById('show-info-{{ $loop->iteration }}')
+            var btnRemove{{ $loop->iteration }} = document.getElementById('btn-remove-{{ $loop->iteration }}')
+            //modalnya
             var dialog{{ $loop->iteration }} = document.getElementById('modal-box-{{ $loop->iteration }}')
+            var dialogRemove{{ $loop->iteration }} = document.getElementById('remove-modal-{{ $loop->iteration }}')
             btn{{ $loop->iteration }}.addEventListener("click", (event) => {
                     event.stopPropagation()
                     dialog{{ $loop->iteration }}.showModal();
+                });
+            btnRemove{{ $loop->iteration }}.addEventListener("click", (event) => {
+                    event.stopPropagation()
+                    dialogRemove{{ $loop->iteration }}.showModal();
                 });
 
             @endforeach
