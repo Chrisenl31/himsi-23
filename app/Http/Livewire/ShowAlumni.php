@@ -12,6 +12,7 @@ class ShowAlumni extends Component
 
     public $alumni;
     public $search;
+    public $angkatan;
 
     //inisialisasi variable alumni
     //dijadikan associative array biar gampang sorting nya
@@ -34,7 +35,8 @@ class ShowAlumni extends Component
                 'linkedin' => $entry->jawaban[2]->jawaban,
                 'pekerjaan' => $entry->jawaban[11]->jawaban,
                 'telp' => $entry->jawaban[13]->jawaban,
-                'perusahaan' => $entry->jawaban[6]->jawaban
+                'perusahaan' => $entry->jawaban[6]->jawaban,
+                'angkatan' => $entry->jawaban[12]->jawaban
             ];
             array_push($table, $array);
         };
@@ -42,8 +44,26 @@ class ShowAlumni extends Component
         $this->alumni = $table;
     }
 
+    public function updatingSearch()
+
+    {
+
+        $this->resetPage();
+
+    }
+
+    public function updatingAngkatan()
+
+    {
+
+        $this->resetPage();
+
+    }
+
     public function render()
     {
+
+
         //convert alumni ke collection
         $data = collect($this->alumni);
 
@@ -63,12 +83,12 @@ class ShowAlumni extends Component
             $merged = $result->merge($result2)->unique();
 
             return view('livewire.show-alumni', [
-                'alumnis' => $merged->paginate(5),
+                'alumnis' => $merged->where('angkatan', ($this->angkatan == "") ? "!=" : "=", $this->angkatan)->paginate(5),
             ]);
         }
 
         return view('livewire.show-alumni', [
-            'alumnis' => $data->paginate(5),
+            'alumnis' => $data->where('angkatan', ($this->angkatan == "") ? "!=" : "=", $this->angkatan)->paginate(5),
         ]);
     }
 }

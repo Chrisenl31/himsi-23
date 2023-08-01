@@ -7,10 +7,12 @@
                     <div class="headline__wrapper">
                         <h4 class="headline__title">Data Alumni</h4>
                         <label for="tahun">
-                            <select name="tahun" id="" class="headline__dropdown">
-                                <option value="">2019</option>
-                                <option value="">2018</option>
-                                <option value="">2017</option>
+                            <select wire:model="angkatan" name="tahun" id="" class="headline__dropdown">
+                                <option value="">Semua</option>
+                                <option value="2008">2008</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
                             </select>
                         </label>
                     </div>
@@ -36,19 +38,19 @@
                     </tr>
 
                     @foreach ($alumnis as $entry)
-                    <tr>
+                    <tr wire:key="row-{{ $entry['id'] }}">
                         <td>{{ $entry["nama"] }}</td>
                         <td><a href="//{{ $entry["linkedin"] }}">linkedin</a></td>
                         <td>{{ $entry["email"] }}</td>
                         <td>{{ $entry["pekerjaan"] }}</td>
                         <td>
-                            <div class="icons">
+                            <div class="icons" wire:key="icons-{{ $loop->iteration }}">
                                 <button class="show-info" type="button" id="show-info-{{ $loop->iteration }}"><img
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
-                                <form method="post" action="{{ url("/admin/alumni/remove") }}" >
+                                <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}">
                                     @csrf
-                                    <input name="id" type="hidden" value="{{ $entry['id'] }}">
+                                    <input name="id" type="hidden" value="{{ $entry['id'] }}" wire:key="value-{{ $entry['id'] }}">
                                     <button type="submit"><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
                                 </form>
                             </div>
@@ -56,7 +58,7 @@
                         </td>
                     </tr>
                     {{-- modal --}}
-                    <dialog class="modal-box" id="modal-box-{{ $loop->iteration }}">
+                    <dialog class="modal-box" id="modal-box-{{ $loop->iteration }}" wire:key="dialog-{{ $loop->iteration }}">
                         <div class="modal-box__wrapper">
                             <h2>Detail Info</h2>
                             <div class="detail-info">
@@ -104,9 +106,6 @@
         {{ $alumnis->links('livewire.custom-pagination') }}
 
     </main>
-</div>
-
-
     <script>
 
 
@@ -123,7 +122,10 @@
             const body = document.querySelector("body");
             body.addEventListener("click", function(e)
             {
-                document.querySelector("[open='']").close()
+                if(document.querySelector("[open='']") != null)
+                {
+                    document.querySelector("[open='']").close()
+                }
             });
 
             const close = document.querySelectorAll(".close-btn");
@@ -153,4 +155,8 @@
 
         });*/
     </script>
+</div>
+
+
+
 
