@@ -28,15 +28,16 @@ class ShowAlumni extends Component
         $table = [];
 
         foreach($data->penjawab as $index=>$entry){
+
             $array = [
                 'id' => $entry->id,
-                'nama' => $entry->jawaban[0]->jawaban,
-                'email' => $entry->jawaban[1]->jawaban,
-                'linkedin' => $entry->jawaban[2]->jawaban,
-                'pekerjaan' => $entry->jawaban[11]->jawaban,
-                'telp' => $entry->jawaban[13]->jawaban,
-                'perusahaan' => $entry->jawaban[6]->jawaban,
-                'angkatan' => $entry->jawaban[12]->jawaban
+                'nama' => $entry->jawaban->where('pertanyaan_id', '279')->first()->jawaban,
+                'email' => $entry->jawaban->where('pertanyaan_id', '281')->first()->jawaban,
+                'linkedin' => $entry->jawaban->where('pertanyaan_id', '282')->first()->jawaban,
+                'pekerjaan' => $entry->jawaban->where('pertanyaan_id', '299')->first()->jawaban,
+                'telp' => $entry->jawaban->where('pertanyaan_id', '343')->first()->jawaban,
+                'perusahaan' => $entry->jawaban->where('pertanyaan_id', '294')->first()->jawaban,
+                'angkatan' => $entry->jawaban->where('pertanyaan_id', '342')->first()->jawaban
             ];
             array_push($table, $array);
         };
