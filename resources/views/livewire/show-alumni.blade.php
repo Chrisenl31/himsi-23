@@ -51,11 +51,11 @@
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
                                 {{-- remove --}}
-                                <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}">
+                                <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}" id="form-{{ $loop->iteration }}">
                                     @csrf
                                     <input name="id" type="hidden" value="{{ $entry['id'] }}" wire:key="value-{{ $entry['id'] }}">
                                     {{-- tombol remove --}}
-                                    <button id="btn-remove-{{ $loop->iteration }}" ><img src="{{ url('assets/img/alumni-delete.svg') }}"></button>
+                                    <div id="btn-remove-{{ $loop->iteration }}" ><img src="{{ url('assets/img/alumni-delete.svg') }}"></div>
                                 </form>
                             </div>
 
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                     </dialog>
-                    
+
                     {{-- modals remove --}}
                     <dialog class="modal-box" id="remove-modal-{{ $loop->iteration }}">
                         <div class="modal-box__remove">
@@ -110,8 +110,8 @@
                                 <h2>Remove Data</h2>
                                 <p>Apakah anda yakin ingin menghapus data ini?</p>
                                 <div class="buttons">
-                                    <button type="button" class="close-btn">Cancel</button>
-                                    <button type="button" class="close-btn">Remove</button>
+                                    <button type="button" class="cancel-btn">Cancel</button>
+                                    <button type="button" class="remove-btn">Remove</button>
                                 </div>
                             </div>
                         </div>
@@ -126,21 +126,40 @@
     </main>
     <script>
 
-// script buat permodalan dan dialog
+// script buat permodalan dan dialog remove alumni
+            function dialog(modal, form) {
+                var dialog = $('#' + modal)
+                var formRemove = $('#' + form)
+                dialog.get()[0].showModal()
+
+                dialog.find('.cancel-btn').click(function() {
+                    dialog.get()[0].close();
+
+                });
+                dialog.find('.remove-btn').click(function() {
+                    dialog.get()[0].close();
+                    formRemove.get()[0].submit();
+
+                });
+            }
+
             @foreach ($alumnis as $entry)
             //tombolnya
             var btn{{ $loop->iteration }} = document.getElementById('show-info-{{ $loop->iteration }}')
             var btnRemove{{ $loop->iteration }} = document.getElementById('btn-remove-{{ $loop->iteration }}')
+            var form{{ $loop->iteration }} = document.getElementById('form-{{ $loop->iteration }}')
             //modalnya
             var dialog{{ $loop->iteration }} = document.getElementById('modal-box-{{ $loop->iteration }}')
             var dialogRemove{{ $loop->iteration }} = document.getElementById('remove-modal-{{ $loop->iteration }}')
+
             btn{{ $loop->iteration }}.addEventListener("click", (event) => {
-                    event.stopPropagation()
+                    event.stopPropagation();
                     dialog{{ $loop->iteration }}.showModal();
                 });
+
             btnRemove{{ $loop->iteration }}.addEventListener("click", (event) => {
                     event.stopPropagation()
-                    dialogRemove{{ $loop->iteration }}.showModal();
+                    dialog('remove-modal-{{ $loop->iteration }}', 'form-{{ $loop->iteration }}')
                 });
 
             @endforeach
