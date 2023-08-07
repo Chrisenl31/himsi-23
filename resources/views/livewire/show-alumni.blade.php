@@ -44,67 +44,69 @@
                         <td>{{ $entry["email"] }}</td>
                         <td>{{ $entry["pekerjaan"] }}</td>
                         <td>
-                            <div class="icons" wire:key="icons-{{ $loop->iteration }}">
+                            <div class="icons" wire:key="icons-{{ $entry['id'] }}">
 
                                 {{-- tombol show info --}}
-                                <button class="show-info" type="button" id="show-info-{{ $loop->iteration }}"><img
+                                <button onclick="buttonShowInfo(this)" class="show-info" type="button" id="show-info-{{ $entry['id'] }}" modal-id="modal-box-{{ $entry['id'] }}"><img
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
                                 <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
                                 {{-- remove --}}
-                                <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}" id="form-{{ $loop->iteration }}">
+                                <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}" id="form-{{ $entry['id'] }}">
                                     @csrf
                                     <input name="id" type="hidden" value="{{ $entry['id'] }}" wire:key="value-{{ $entry['id'] }}">
                                     {{-- tombol remove --}}
-                                    <div id="btn-remove-{{ $loop->iteration }}" ><img src="{{ url('assets/img/alumni-delete.svg') }}"></div>
+                                    <div onclick="buttonRemove(this)" id="btn-remove-{{ $entry['id'] }}" modal-id="remove-modal-{{ $entry['id'] }}" form-id="form-{{ $entry['id'] }}"><img src="{{ url('assets/img/alumni-delete.svg') }}"></div>
                                 </form>
                             </div>
 
                         </td>
                     </tr>
+
                     {{-- modals show info --}}
-                    <dialog class="modal-box" id="modal-box-{{ $loop->iteration }}" wire:key="dialog-{{ $loop->iteration }}">
+                    <dialog class="modal-box" id="modal-box-{{ $entry['id'] }}" wire:key="dialog-{{ $entry['id'] }}">
                         <div class="modal-box__wrapper">
                             <h2>Detail Info</h2>
-                            <div class="detail-info">
-                                <div class="field">
-                                    <div class="field-left">
-                                        <div class="form-group-detail">
-                                            <label class="form-label" for="name">Nama</label>
-                                            <span id="name" class="form-control-plaintext">{{ $entry["nama"] }}</span>
+                                <div class="detail-info">
+                                    <div class="field">
+                                        <div class="field-left">
+                                            <div class="form-group-detail">
+                                                <label class="form-label" for="name">Nama</label>
+                                                <span id="name" class="form-control-plaintext">{{ $entry["nama"] }}</span>
+                                            </div>
+                                            <div class="form-group-detail">
+                                                <label class="form-label">Email</label>
+                                                <span class="form-control-plaintext">{{ $entry["email"] }}</span>
+                                            </div>
+                                            <div class="form-group-detail">
+                                                <label class="form-label">Nomor Telepon</label>
+                                                <span class="form-control-plaintext">{{ $entry["telp"] }}</span>
+                                            </div>
                                         </div>
-                                        <div class="form-group-detail">
-                                            <label class="form-label">Email</label>
-                                            <span class="form-control-plaintext">{{ $entry["email"] }}</span>
-                                        </div>
-                                        <div class="form-group-detail">
-                                            <label class="form-label">Nomor Telepon</label>
-                                            <span class="form-control-plaintext">{{ $entry["telp"] }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="field-right">
-                                        <div class="form-group-detail">
-                                            <label class="form-label">Jabatan</label>
-                                            <span class="form-control-plaintext">{{ $entry["pekerjaan"] }}</span>
-                                        </div>
-                                        <div class="form-group-detail">
-                                            <label class="form-label">Profil Linkedin</label>
-                                            <span class="form-control-plaintext">{{ $entry["linkedin"] }}</span>
-                                        </div>
-                                        <div class="form-group-detail">
-                                            <label class="form-label">Nama dan Alamat Perusahaan</label>
-                                            <span class="form-control-plaintext">{{ $entry["perusahaan"] }}</span>
+                                        <div class="field-right">
+                                            <div class="form-group-detail">
+                                                <label class="form-label">Jabatan</label>
+                                                <span class="form-control-plaintext">{{ $entry["pekerjaan"] }}</span>
+                                            </div>
+                                            <div class="form-group-detail">
+                                                <label class="form-label">Profil Linkedin</label>
+                                                <span class="form-control-plaintext">{{ $entry["linkedin"] }}</span>
+                                            </div>
+                                            <div class="form-group-detail">
+                                                <label class="form-label">Nama dan Alamat Perusahaan</label>
+                                                <span class="form-control-plaintext">{{ $entry["perusahaan"] }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="buttons">
-                                <button type="button" class="close-btn">Close</button>
-                            </div>
+                                <div class="buttons">
+                                    <button onclick="closeModal(this)" type="button" class="close-btn" modal-id="modal-box-{{ $entry['id'] }}">Close</button>
+                                </div>
                         </div>
                     </dialog>
 
+
                     {{-- modals remove --}}
-                    <dialog class="modal-box" id="remove-modal-{{ $loop->iteration }}">
+                    <dialog class="modal-box" id="remove-modal-{{ $entry['id'] }}">
                         <div class="modal-box__remove">
                             <div class="modal-box__wrapper">
                                 <h2>Remove Data</h2>
@@ -126,8 +128,43 @@
     </main>
     <script>
 
+        // script buat permodalan dan dialog remove alumni
+        function buttonRemove(element) {
+            var modal_id = element.getAttribute('modal-id');
+            var modal = document.getElementById(modal_id);
+
+            var form_id = element.getAttribute('form-id');
+            var form = document.getElementById(form_id);
+
+            modal.showModal();
+
+            var dialog = $('#'+modal_id)
+
+            dialog.find('.cancel-btn').click(function() {
+                dialog.get()[0].close();
+
+            });
+            dialog.find('.remove-btn').click(function() {
+                dialog.get()[0].close();
+                form.submit();
+
+            });
+        }
+
+        function buttonShowInfo(element) {
+            var modal_id = element.getAttribute('modal-id');
+            var modal = document.getElementById(modal_id);
+            modal.showModal();
+        }
+
+        function closeModal(element) {
+            var modal_id = element.getAttribute('modal-id');
+            var modal = document.getElementById(modal_id);
+            modal.close();
+        }
 // script buat permodalan dan dialog remove alumni
-            function dialog(modal, form) {
+{{--
+            /*function dialog(modal, form) {
                 var dialog = $('#' + modal)
                 var formRemove = $('#' + form)
                 dialog.get()[0].showModal()
@@ -145,21 +182,21 @@
 
             @foreach ($alumnis as $entry)
             //tombolnya
-            var btn{{ $loop->iteration }} = document.getElementById('show-info-{{ $loop->iteration }}')
-            var btnRemove{{ $loop->iteration }} = document.getElementById('btn-remove-{{ $loop->iteration }}')
-            var form{{ $loop->iteration }} = document.getElementById('form-{{ $loop->iteration }}')
+            var btn{{ $entry['id'] }} = document.getElementById('show-info-{{ $entry['id'] }}')
+            var btnRemove{{ $entry['id'] }} = document.getElementById('btn-remove-{{ $entry['id'] }}')
+            var form{{ $entry['id'] }} = document.getElementById('form-{{ $entry['id'] }}')
             //modalnya
-            var dialog{{ $loop->iteration }} = document.getElementById('modal-box-{{ $loop->iteration }}')
-            var dialogRemove{{ $loop->iteration }} = document.getElementById('remove-modal-{{ $loop->iteration }}')
+            var dialog{{ $entry['id'] }} = document.getElementById('modal-box-{{ $entry['id'] }}')
+            var dialogRemove{{ $entry['id'] }} = document.getElementById('remove-modal-{{ $entry['id'] }}')
 
-            btn{{ $loop->iteration }}.addEventListener("click", (event) => {
+            btn{{ $entry['id'] }}.addEventListener("click", (event) => {
                     event.stopPropagation();
-                    dialog{{ $loop->iteration }}.showModal();
+                    dialog{{ $entry['id'] }}.showModal();
                 });
 
-            btnRemove{{ $loop->iteration }}.addEventListener("click", (event) => {
+            btnRemove{{ $entry['id'] }}.addEventListener("click", (event) => {
                     event.stopPropagation()
-                    dialog('remove-modal-{{ $loop->iteration }}', 'form-{{ $loop->iteration }}')
+                    dialog('remove-modal-{{ $entry['id'] }}', 'form-{{ $entry['id'] }}')
                 });
 
             @endforeach
@@ -179,9 +216,8 @@
                 closeBtn.addEventListener("click", (event) => {
                     document.querySelector("[open='']").close()
                 })
-            })
-
-
+            })*/
+--}}
 
 
         /*document.addEventListener("DOMContentLoaded", function() {
