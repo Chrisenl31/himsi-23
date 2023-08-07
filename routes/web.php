@@ -57,7 +57,8 @@ Route::prefix('admin')->group(function () {
     // ini untuk admin bagian alumni
     Route::prefix('alumni')->middleware('auth')->group(function () {
         Route::get('/add', [AlumniController::class, 'add']);
-        Route::post('/edit', [AlumniController::class, 'edit']);
+        Route::get('/edit/{id}', [AlumniController::class, 'edit']);
+        Route::post('/edit', [AlumniController::class, 'update']);
         Route::post('/remove', [AlumniController::class, 'remove']);
         Route::get('/', [AlumniController::class, 'index'])->name('alumni.index');
     });

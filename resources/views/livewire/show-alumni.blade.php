@@ -49,7 +49,7 @@
                                 {{-- tombol show info --}}
                                 <button onclick="buttonShowInfo(this)" class="show-info" type="button" id="show-info-{{ $entry['id'] }}" modal-id="modal-box-{{ $entry['id'] }}"><img
                                         src="{{ url('assets/img/alumni-info.svg') }}"></button>
-                                <button type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></button>
+                                <a href="{{ url('/admin/alumni/edit/'.$entry['id']) }}" type="button"><img src="{{ url('assets/img/alumni-edit.svg') }}"></a>
                                 {{-- remove --}}
                                 <form method="post" action="{{ url("/admin/alumni/remove") }}" wire:key="form-{{ $entry['id'] }}" id="form-{{ $entry['id'] }}">
                                     @csrf

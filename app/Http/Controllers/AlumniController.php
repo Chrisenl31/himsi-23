@@ -20,8 +20,30 @@ class AlumniController extends Controller
         return view('koneksi.admin.alumniadd');
     }
 
-    public function edit(Request $request) {
-        $alumni = FormPenjawab::find($request->id);
+    public function edit(String $id){
+        $alumni = FormPenjawab::where('form_id', 70)->find($id);
+        if ($alumni == null){
+            return redirect('/admin/alumni');
+        }
+
+        $entry = $alumni;
+
+        $array = [
+            'id' => $entry->id,
+            'nama' => $entry->jawaban->where('pertanyaan_id', '279')->first()->jawaban,
+            'email' => $entry->jawaban->where('pertanyaan_id', '281')->first()->jawaban,
+            'linkedin' => $entry->jawaban->where('pertanyaan_id', '282')->first()->jawaban,
+            'pekerjaan' => $entry->jawaban->where('pertanyaan_id', '299')->first()->jawaban,
+            'telp' => $entry->jawaban->where('pertanyaan_id', '343')->first()->jawaban,
+            'perusahaan' => $entry->jawaban->where('pertanyaan_id', '294')->first()->jawaban,
+            'angkatan' => $entry->jawaban->where('pertanyaan_id', '342')->first()->jawaban
+        ];
+
+        return view('koneksi.admin.alumniedit', $array);
+    }
+
+    public function update(Request $request) {
+        $alumni = FormPenjawab::where('form_id', 70)->find($request->id);
 
             $alumni->jawaban->where('pertanyaan_id', '279')->first()->jawaban = $request->nama;
             $alumni->jawaban->where('pertanyaan_id', '279')->first()->save();
